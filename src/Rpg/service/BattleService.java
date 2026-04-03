@@ -57,7 +57,11 @@ public class BattleService {
                     System.out.println("inimigo tentou causar:" + enemy.getdano());
                 } else {
                     player.takeDamage(enemy.getdano());
-                    System.out.println("voce ficou com:" + player.getLife() + " vida");
+                    if (player.getLife() < 0) {
+                        System.out.println("voce ficou com:" + 0 + " vida");
+                    } else {
+                        System.out.println("voce ficou com:" + player.getLife() + " vida");
+                    }
                 }
             }
             endGameService.endGame(player, enemy);
