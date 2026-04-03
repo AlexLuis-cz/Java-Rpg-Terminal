@@ -6,6 +6,7 @@ import java.util.*;
 
 public class VerificacaoStatus {
     Scanner sc = new Scanner(System.in);
+
     public int statusVida() {
         int vida = sc.nextInt();
         while (vida > 1000) {
