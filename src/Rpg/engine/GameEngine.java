@@ -18,7 +18,7 @@ public class GameEngine {
     }
 
     public void starEscolhainimigo() {
-        System.out.println("----------------");
+        System.out.println("-----------------");
         enemyEscolhido.Imp();
     }
 
