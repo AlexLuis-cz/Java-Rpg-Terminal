@@ -1,34 +1,32 @@
 package Rpg.model;
 
-public class Player {
-    private String name;
-    private int life;
-    private int damage;
+public class Player extends Character {
 
     public Player(String name, int life, int damage) {
-        this.name = name;
-        this.life = life;
-        this.damage = damage;
+        this.nome = name;
+        this.vida = life;
+        this.dano = damage;
     }
 
     public Player() {
     }
-    public void takeDamage(int danoTomado){
-        this.life -= danoTomado;
+
+    public void takeDamage(int danoTomado) {
+        this.vida -= danoTomado;
     }
 
 
     public int getLife() {
-        return life;
+        return vida;
     }
 
-    public int getDamage(){
-        return this.damage;
+    public int getDamage() {
+        return this.dano;
     }
 
     public void Imp() {
-        System.out.println("nome:" + this.name);
-        System.out.println("vida:" + this.life);
-        System.out.println("dano:" + this.damage);
+        System.out.println("nome:" + this.nome);
+        System.out.println("vida:" + this.vida);
+        System.out.println("dano:" + this.dano);
     }
 }
