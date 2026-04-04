@@ -1,7 +1,4 @@
 package Rpg.service;
-
-import Rpg.model.Player;
-
 import java.util.*;
 
 public class VerificacaoStatus {
@@ -23,7 +20,7 @@ public class VerificacaoStatus {
     public int statusDano() {
         int dano = sc.nextInt();
         while (dano > 200) {
-            System.out.println("muito dano escreva um valor mais baixo");
+            System.out.print("muito dano escreva um valor mais baixo:");
             dano = sc.nextInt();
             if (dano < 200 && dano >= 0) {
                 break;

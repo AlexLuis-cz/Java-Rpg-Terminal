@@ -11,12 +11,10 @@ public class BattleService {
         Scanner sc = new Scanner(System.in);
         UtilRandom utilRandom = new UtilRandom();
         EndGameService endGameService = new EndGameService();
-
+        int contadorRodada = 0;
         while (player.getLife() > 0 && enemy.getVida() > 0) {
             boolean inimigoDefende = false;
             boolean jogadorDefende = false;
-            int contadorRodada = 0;
-            contadorRodada++;
             System.out.println("------------------------");
             System.out.println("Rodada" + contadorRodada);
             System.out.println("Fight");
@@ -64,6 +62,7 @@ public class BattleService {
                     }
                 }
             }
+            contadorRodada++;
             endGameService.endGame(player, enemy);
         }
     }
