@@ -11,6 +11,23 @@ public class Player extends Character {
     public Player() {
     }
 
+    public boolean Defendendo(int acao) {
+        if (acao == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean Defendendo(int acao, int danoTomado) {
+        if (acao == 0) {
+            this.vida -= danoTomado / 2;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void takeDamage(int danoTomado) {
         this.vida -= danoTomado;
     }

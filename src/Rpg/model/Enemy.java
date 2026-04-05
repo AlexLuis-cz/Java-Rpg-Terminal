@@ -8,6 +8,23 @@ public class Enemy extends Character {
         this.dano = damage;
     }
 
+    public boolean Defendendo(int acao) {
+        if (acao == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean Defendendo(int acao, int danoTomado) {
+        if (acao == 1) {
+            this.vida -= danoTomado / 2;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public int getVida() {
         return this.vida;
     }

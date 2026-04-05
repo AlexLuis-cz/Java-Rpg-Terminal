@@ -13,10 +13,10 @@ public class EnemyService {
                 enemySelect = new Enemy("Artemis", utilRandom.escolhaVida(), utilRandom.escolhaDano());
                 break;
             case 1:
-                enemySelect = new Enemy("getulio vargas", utilRandom.escolhaVida(), utilRandom.escolhaDano());
+                enemySelect = new Enemy("Alexios", utilRandom.escolhaVida(), utilRandom.escolhaDano());
                 break;
             case 2:
-                enemySelect = new Enemy("eneias", utilRandom.escolhaVida(), utilRandom.escolhaDano());
+                enemySelect = new Enemy("eivor", utilRandom.escolhaVida(), utilRandom.escolhaDano());
                 break;
             default:
                 break;
