@@ -22,6 +22,7 @@ public class PlayerService {
         int dano = verificacaoStatus.statusDano();
 
         playerSelect = new Player(nome, vida, dano);
+        playerSelect.Imp();
         return playerSelect;
     }
 }

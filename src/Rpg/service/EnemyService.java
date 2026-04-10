@@ -11,12 +11,15 @@ public class EnemyService {
         switch (utilRandom.numeroAleatorio()) {
             case 0:
                 enemySelect = new Enemy("Artemis", utilRandom.escolhaVida(), utilRandom.escolhaDano());
+                enemySelect.Imp();
                 break;
             case 1:
                 enemySelect = new Enemy("Alexios", utilRandom.escolhaVida(), utilRandom.escolhaDano());
+                enemySelect.Imp();
                 break;
             case 2:
                 enemySelect = new Enemy("eivor", utilRandom.escolhaVida(), utilRandom.escolhaDano());
+                enemySelect.Imp();
                 break;
             default:
                 break;

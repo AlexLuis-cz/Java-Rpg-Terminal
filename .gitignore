@@ -4,6 +4,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .kotlin
+.RpgJunior.iml
 
 ### Eclipse ###
 .apt_generated

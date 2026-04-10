@@ -6,22 +6,20 @@ public class UtilRandom {
     Random random = new Random();
 
     public int numeroAleatorio() {
-        int num = random.nextInt(3);
-        return num;
+        return random.nextInt(3);
     }
 
     public int escolhaVida() {
-        int vidaEscolhida = random.nextInt(500, 1000);
-        return vidaEscolhida;
+        return random.nextInt(500, 1000);
     }
 
     public int escolhaDano() {
-        int danoEscolhido = random.nextInt(100, 200);
-        return danoEscolhido;
+        return random.nextInt(100, 200);
     }
 
     public int EscolhaInimigo() {
-        int escolha = random.nextInt(2);
+        int escolha;
+        escolha = random.nextInt(2);
         return escolha;
     }
 }

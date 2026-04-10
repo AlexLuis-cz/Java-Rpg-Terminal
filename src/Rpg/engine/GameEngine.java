@@ -9,21 +9,14 @@ import Rpg.service.PlayerService;
 public class GameEngine {
     PlayerService playerService = new PlayerService();
     EnemyService enemyService = new EnemyService();
+    BattleService battleStart = new BattleService();
 
-    Player playerEscolhido = playerService.selectPlayer();
-    Enemy enemyEscolhido = enemyService.selectEnemy();
 
-    public void startEscolhaJogador() {
-        playerEscolhido.Imp();
-    }
+    public void EscolhaDosPersonagens() {
+        Player playerEscolhido = playerService.selectPlayer();
+        Enemy enemyEscolhido = enemyService.selectEnemy();
 
-    public void starEscolhainimigo() {
-        System.out.println("-----------------");
-        enemyEscolhido.Imp();
-    }
-
-    public void BattleStart() {
-        BattleService battleStart = new BattleService();
+        //inicio da batalha
         battleStart.Battle(playerEscolhido, enemyEscolhido);
     }
 }

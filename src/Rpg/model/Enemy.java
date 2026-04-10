@@ -9,11 +9,7 @@ public class Enemy extends Character {
     }
 
     public boolean Defendendo(int acao) {
-        if (acao == 1) {
-            return true;
-        } else {
-            return false;
-        }
+        return acao == 1;
     }
 
     public boolean Defendendo(int acao, int danoTomado) {
@@ -38,6 +34,7 @@ public class Enemy extends Character {
     }
 
     public void Imp() {
+        System.out.println("-------------");
         System.out.println(this.nome);
         System.out.println(this.vida);
         System.out.println(this.dano);
