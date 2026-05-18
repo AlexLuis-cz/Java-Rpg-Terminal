@@ -16,7 +16,7 @@ public class BattleService {
             System.out.println("------------------------");
             System.out.println("Rodada" + contadorRodada);
             System.out.println("Fight");
-            System.out.println("Attack 1:, Defend 2:");
+            System.out.println("Attack 1:,Defend 2:");
             int acaoInimiga = utilRandom.EscolhaInimigo();
 
             if (acaoInimiga == 1) {
