@@ -12,7 +12,7 @@ public class GameEngine {
     BattleService battleStart = new BattleService();
 
 
-    public void EscolhaDosPersonagens() {
+    public void playerSelect() {
         Player playerEscolhido = playerService.selectPlayer();
         Enemy enemyEscolhido = enemyService.selectEnemy();
 

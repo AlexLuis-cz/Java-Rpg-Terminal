@@ -3,7 +3,7 @@ package Rpg.model;
 public class Player extends Character {
 
     public Player(String name, int life, int damage) {
-        this.nome = name;
+        this.name = name;
         this.vida = life;
         this.dano = damage;
     }
@@ -31,7 +31,7 @@ public class Player extends Character {
     }
 
     public void Imp() {
-        System.out.println("nome:" + this.nome);
+        System.out.println("nome:" + this.name);
         System.out.println("vida:" + this.vida);
         System.out.println("dano:" + this.dano);
     }

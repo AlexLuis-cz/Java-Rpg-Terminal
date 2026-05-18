@@ -26,9 +26,9 @@ public class BattleService {
             byte acao = sc.nextByte();
             switch (acao) {
                 case 1:
-                    if (enemy.Defendendo(acaoInimiga)) {
+                    if (enemy.Defendendo(acaoInimiga,player.getDamage())) {
                         if (enemy.getVida() <= 0) {
-                            System.out.println("inimigo defedeu");
+                            System.out.println("inimigo defedeu, dano causado:"+enemy.getVida());
                             System.out.println("vida oponente:" + 0 + " vida");
                         } else {
                             System.out.println("oponente ficou com:" + enemy.getVida() + " vida");
