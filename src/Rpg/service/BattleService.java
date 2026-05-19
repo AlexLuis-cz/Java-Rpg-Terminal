@@ -11,69 +11,68 @@ public class BattleService {
         Scanner sc = new Scanner(System.in);
         UtilRandom utilRandom = new UtilRandom();
         EndGameService endGameService = new EndGameService();
-        int contadorRodada = 1;
-        while (player.getLife() > 0 && enemy.getVida() > 0) {
+        int roundCounter = 1;
+        while (player.getLife() > 0 && enemy.getLife() > 0) {
             System.out.println("------------------------");
-            System.out.println("Rodada" + contadorRodada);
+            System.out.println("Round" + roundCounter);
             System.out.println("Fight");
             System.out.println("Attack 1:,Defend 2:");
-            int acaoInimiga = utilRandom.EscolhaInimigo();
+            int enemyAction = utilRandom.selectEnemy();
 
-            if (acaoInimiga == 1) {
-                enemy.Defendendo(acaoInimiga, player.getDamage());
+            if (enemyAction == 1) {
+                enemy.defending(enemyAction, player.getDamage());
             }
 
-            byte acao = sc.nextByte();
-            switch (acao) {
+            byte action = sc.nextByte();
+            switch (action) {
                 case 1:
-                    if (enemy.Defendendo(acaoInimiga,player.getDamage())) {
-                        if (enemy.getVida() <= 0) {
-                            System.out.println("inimigo defedeu, dano causado:"+enemy.getVida());
-                            System.out.println("vida oponente:" + 0 + " vida");
+                    if (enemy.defending(enemyAction,player.getDamage())) {
+                        if (enemy.getLife() < 0) {
+                            System.out.printf("Enemy defended, damage caused:%d\n",enemy.getLife());
+                            System.out.printf("Opponent life:%d life\n",0);
                         } else {
-                            System.out.println("oponente ficou com:" + enemy.getVida() + " vida");
+                            System.out.printf("Opponent was left with:%d life\n",enemy.getLife());
                         }
-                        System.out.println("vida atual:" + player.getLife());
+                        System.out.printf("Current life:%d\n",player.getLife());
                     } else {
                         enemy.takeDamage(player.getDamage());
-                        System.out.println("dano causado:" + player.getDamage());
+                        System.out.printf("Damage caused:%d\n",player.getDamage());
 
-                        if (enemy.getVida() < 0) {
-                            System.out.println("vida atual do oponente:" + 0);
+                        if (enemy.getLife() < 0) {
+                            System.out.println("Opponent's current life:"+0);
                         } else {
-                            System.out.println("vida atual do oponente:" + enemy.getVida());
+                            System.out.printf("Current life of the opponent:%d\n",enemy.getLife());
                         }
                     }
                     break;
                 case 2:
-                    player.Defendendo(acao, enemy.getdano());
-                    System.out.println("voce defendeu");
+                    player.defending(action, enemy.getDamage());
+                    System.out.println("You defended");
                     break;
                 default:
-                    System.out.println("opção invalida");
+                    System.out.println("Invalid option");
                     break;
             }
-            if (acaoInimiga == 0) {
-                if (player.Defendendo(acaoInimiga, enemy.getdano())) {
+            if (enemyAction == 0) {
+                if (player.defending(enemyAction, enemy.getDamage())) {
                     if (player.getLife() <= 0) {
-                        System.out.println("voce defendeu:" + 0 + " vida");
+                        System.out.printf("You defended:%d life\n.",0);
                     } else {
-
-                        System.out.println("voce defendeu:" + player.getLife());
-                        System.out.println("inimigo atacou:" + enemy.getdano());
+                        System.out.printf("You defended:%d\n",player.getLife());
+                        System.out.printf("enemy attacked:%d\n",enemy.getDamage());
                     }
                 } else {
-                    player.takeDamage(enemy.getdano());
-                    System.out.println("dano tomado:" + enemy.getdano());
+                    player.takeDamage(enemy.getDamage());
+                    System.out.printf("Damage taken:%d\n",enemy.getDamage());
 
                     if (player.getLife() <= 0) {
-                        System.out.println("vida atual:" + 0 + " vida");
+                        System.out.printf("Current life:%d life\n",0);
                     } else {
-                        System.out.println("vida atual:" + player.getLife());
+                        System.out.printf("Current life:%d",player.getLife());
                     }
                 }
             }
-            contadorRodada++;
+            roundCounter++;
             endGameService.endGame(player, enemy);
         }
     }

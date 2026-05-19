@@ -9,15 +9,15 @@ public class UtilRandom {
         return random.nextInt(3);
     }
 
-    public int escolhaVida() {
+    public int selectLife() {
         return random.nextInt(500, 1000);
     }
 
-    public int escolhaDano() {
+    public int selectDamage() {
         return random.nextInt(100, 200);
     }
 
-    public int EscolhaInimigo() {
+    public int selectEnemy() {
         int escolha;
         escolha = random.nextInt(2);
         return escolha;

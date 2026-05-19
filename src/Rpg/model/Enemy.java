@@ -4,39 +4,35 @@ public class Enemy extends Character {
 
     public Enemy(String name, int life, int damage) {
         this.name = name;
-        this.vida = life;
-        this.dano = damage;
+        this.life = life;
+        this.damage = damage;
     }
 
-    public boolean Defendendo(int acao) {
-        return acao == 1;
-    }
-
-    public boolean Defendendo(int acao, int danoTomado) {
-        if (acao == 1) {
-            this.vida -= danoTomado / 2;
+    public boolean defending(int action, int damageTaken) {
+        if (action == 1) {
+            this.life -= damageTaken / 2;
             return true;
         } else {
             return false;
         }
     }
 
-    public int getVida() {
-        return this.vida;
+    public int getLife() {
+        return this.life;
     }
 
-    public int getdano() {
-        return this.dano;
+    public int getDamage() {
+        return this.life;
     }
 
-    public void takeDamage(int danoTomado) {
-        this.vida -= danoTomado;
+    public void takeDamage(int damageTaken) {
+        this.life -= damageTaken;
     }
 
     public void Imp() {
         System.out.println("-------------");
         System.out.println(this.name);
-        System.out.println(this.vida);
-        System.out.println(this.dano);
+        System.out.println(this.life);
+        System.out.println(this.damage);
     }
 }

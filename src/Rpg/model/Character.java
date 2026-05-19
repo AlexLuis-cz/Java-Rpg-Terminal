@@ -2,7 +2,7 @@ package Rpg.model;
 
 public class Character {
     protected String name;
-    protected int vida;
-    protected int dano;
-    protected boolean defesa;
+    protected int life;
+    protected int damage;
+    protected boolean defense;
 }

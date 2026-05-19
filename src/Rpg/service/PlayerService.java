@@ -7,21 +7,21 @@ import java.util.Scanner;
 public class PlayerService {
     public Player selectPlayer() {
         Player playerSelect;
-        VerificacaoStatus verificacaoStatus = new VerificacaoStatus();
+        CheckStatus statusCheck = new CheckStatus();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("crie seu jogador.");
-        System.out.print("crie Nome:");
-        String nome = sc.nextLine();
-        System.out.println("vida entre 1 a 1000");
-        System.out.print("adicione sua vida:");
-        int vida = verificacaoStatus.statusVida();
+        System.out.println("Create your player.");
+        System.out.print("Create your Name:");
+        String name = sc.nextLine();
+        System.out.println("Lifespan less than 1000");
+        System.out.print("Add your life:");
+        int life = statusCheck.statusCheckLife();
 
-        System.out.println("dano entre 1 a 200");
-        System.out.print("dano:");
-        int dano = verificacaoStatus.statusDano();
+        System.out.println("Damage less than 200");
+        System.out.print("Damage:");
+        int damage = statusCheck.statusCheckDamage();
 
-        playerSelect = new Player(nome, vida, dano);
+        playerSelect = new Player(name,life,damage);
         playerSelect.Imp();
         return playerSelect;
     }
