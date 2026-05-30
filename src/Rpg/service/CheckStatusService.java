@@ -1,14 +1,14 @@
 package Rpg.service;
-import java.util.*;
 
-public class CheckStatus {
-    Scanner sc = new Scanner(System.in);
+import Rpg.util.InputUtil;
 
-    public int statusCheckLife() {
-        int life = sc.nextInt();
+public class CheckStatusService {
+
+    public static int statusCheckLife() {
+        int life = InputUtil.readInt();
         while (life > 1000) {
             System.out.println("Too much life, write a lower value.");
-            life = sc.nextInt();
+            life = InputUtil.readInt();
             if (life < 1000 && life > 0) {
                 break;
             } else {
@@ -18,11 +18,11 @@ public class CheckStatus {
         return life;
     }
 
-    public int statusCheckDamage() {
-        int damage = sc.nextInt();
+    public static int statusCheckDamage() {
+        int damage = InputUtil.readInt();
         while (damage > 200) {
             System.out.print("Too much damage, write a lower value:");
-            damage = sc.nextInt();
+            damage = InputUtil.readInt();
             if (damage < 200 && damage >= 0) {
                 break;
             } else {

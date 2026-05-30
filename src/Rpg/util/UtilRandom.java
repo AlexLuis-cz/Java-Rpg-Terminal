@@ -5,7 +5,8 @@ import java.util.Random;
 public class UtilRandom {
     Random random = new Random();
 
-    public int numeroAleatorio() {
+    //Enemy select attribute.
+    public int randomNumber() {
         return random.nextInt(3);
     }
 
@@ -18,8 +19,8 @@ public class UtilRandom {
     }
 
     public int selectEnemy() {
-        int escolha;
-        escolha = random.nextInt(2);
-        return escolha;
+        int choice;
+        choice = random.nextInt(2);
+        return choice;
     }
 }

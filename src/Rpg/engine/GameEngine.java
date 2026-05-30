@@ -13,11 +13,11 @@ public class GameEngine {
 
 
     public void playerSelect() {
-        Player playerEscolhido = playerService.selectPlayer();
-        Enemy enemyEscolhido = enemyService.selectEnemy();
+        Player playerSelect = playerService.selectPlayer();
+        Enemy enemySelect = enemyService.selectEnemy();
 
-        //inicio da batalha
-        battleStart.Battle(playerEscolhido, enemyEscolhido);
+        //Start battle
+        battleStart.Battle(playerSelect, enemySelect);
     }
 }
 

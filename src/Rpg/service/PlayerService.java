@@ -1,28 +1,24 @@
 package Rpg.service;
 
 import Rpg.model.Player;
-
-import java.util.Scanner;
+import Rpg.util.ImpUtil;
+import Rpg.util.InputUtil;
 
 public class PlayerService {
     public Player selectPlayer() {
         Player playerSelect;
-        CheckStatus statusCheck = new CheckStatus();
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Create your player.");
-        System.out.print("Create your Name:");
-        String name = sc.nextLine();
+        //Creat Player.
+        String name = InputUtil.readString("Create your player.\nCreate your Name:");
         System.out.println("Lifespan less than 1000");
         System.out.print("Add your life:");
-        int life = statusCheck.statusCheckLife();
+        int life = CheckStatusService.statusCheckLife();
 
         System.out.println("Damage less than 200");
         System.out.print("Damage:");
-        int damage = statusCheck.statusCheckDamage();
+        int damage = CheckStatusService.statusCheckDamage();
 
-        playerSelect = new Player(name,life,damage);
-        playerSelect.Imp();
+        playerSelect = new Player(name, life, damage);
+        ImpUtil.impPlayer(playerSelect);
         return playerSelect;
     }
 }

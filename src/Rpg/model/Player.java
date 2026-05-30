@@ -8,8 +8,8 @@ public class Player extends Character {
         this.damage = damage;
     }
 
-    public boolean defending(int acao, int damageTaken) {
-        if (acao == 0) {
+    public boolean defending(int action, int damageTaken) {
+        if (action == 0) {
             this.life -= damageTaken / 2;
             return true;
         } else {
@@ -21,18 +21,4 @@ public class Player extends Character {
         this.life -= damageTaken;
     }
 
-
-    public int getLife() {
-        return life;
-    }
-
-    public int getDamage() {
-        return this.damage;
-    }
-
-    public void Imp() {
-        System.out.println("name:" + this.name);
-        System.out.println("life:" + this.life);
-        System.out.println("damage:" + this.damage);
-    }
 }

@@ -17,22 +17,8 @@ public class Enemy extends Character {
         }
     }
 
-    public int getLife() {
-        return this.life;
-    }
-
-    public int getDamage() {
-        return this.life;
-    }
-
     public void takeDamage(int damageTaken) {
         this.life -= damageTaken;
     }
 
-    public void Imp() {
-        System.out.println("-------------");
-        System.out.println(this.name);
-        System.out.println(this.life);
-        System.out.println(this.damage);
-    }
 }
