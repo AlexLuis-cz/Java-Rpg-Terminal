@@ -1,7 +1,6 @@
 package Rpg.service;
 
 import Rpg.model.Enemy;
-import Rpg.util.ImpUtil;
 import Rpg.util.UtilRandom;
 
 public class EnemyService {
@@ -12,15 +11,15 @@ public class EnemyService {
         switch (utilRandom.randomNumber()) {
             case 0:
                 enemySelect = new Enemy("Artemis", utilRandom.selectLife(), utilRandom.selectDamage());
-                ImpUtil.impEnemy(enemySelect);
+                System.out.println(enemySelect);
                 break;
             case 1:
                 enemySelect = new Enemy("Alexios", utilRandom.selectLife(), utilRandom.selectDamage());
-                ImpUtil.impEnemy(enemySelect);
+                System.out.println(enemySelect);
                 break;
             case 2:
                 enemySelect = new Enemy("Eivor", utilRandom.selectLife(), utilRandom.selectDamage());
-                ImpUtil.impEnemy(enemySelect);
+                System.out.println(enemySelect);
                 break;
             default:
                 break;

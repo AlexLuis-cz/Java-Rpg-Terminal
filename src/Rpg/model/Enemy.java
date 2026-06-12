@@ -21,4 +21,11 @@ public class Enemy extends Character {
         this.life -= damageTaken;
     }
 
+    @Override
+    public String toString() {
+        return "------------------" +
+                "\nName:" + this.name +
+                "\nLife:" + this.life +
+                "\nDamage:" + this.damage;
+    }
 }

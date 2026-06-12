@@ -1,7 +1,6 @@
 package Rpg.service;
 
 import Rpg.model.Player;
-import Rpg.util.ImpUtil;
 import Rpg.util.InputUtil;
 
 public class PlayerService {
@@ -18,7 +17,7 @@ public class PlayerService {
         int damage = CheckStatusService.statusCheckDamage();
 
         playerSelect = new Player(name, life, damage);
-        ImpUtil.impPlayer(playerSelect);
+        System.out.println(playerSelect);
         return playerSelect;
     }
 }
