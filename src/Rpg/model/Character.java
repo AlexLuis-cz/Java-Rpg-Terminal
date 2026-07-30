@@ -2,6 +2,8 @@ package Rpg.model;
 
 public class Character {
     protected String name;
+    protected NameEnemys nameEnemys;
+
     protected int life;
     protected int damage;
 
@@ -13,7 +15,4 @@ public class Character {
         return this.damage;
     }
 
-    public String getName() {
-        return this.name;
-    }
 }

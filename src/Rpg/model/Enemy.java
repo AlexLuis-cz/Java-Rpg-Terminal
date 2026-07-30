@@ -2,8 +2,8 @@ package Rpg.model;
 
 public class Enemy extends Character {
 
-    public Enemy(String name, int life, int damage) {
-        this.name = name;
+    public Enemy(NameEnemys nameEnemys, int life, int damage) {
+        super.nameEnemys = nameEnemys;
         this.life = life;
         this.damage = damage;
     }
@@ -24,7 +24,7 @@ public class Enemy extends Character {
     @Override
     public String toString() {
         return "------------------" +
-                "\nName:" + this.name +
+                "\nName:" + this.nameEnemys.getName() +
                 "\nLife:" + this.life +
                 "\nDamage:" + this.damage;
     }
