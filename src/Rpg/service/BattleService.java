@@ -19,32 +19,28 @@ public class BattleService {
             int enemyAction = utilRandom.selectEnemy();
 
             if (enemyAction == 1) {
-                enemy.defending(enemyAction, player.getDamage());
+                enemy.setDefend(true);
+            } else {
+                enemy.vulnerable();
             }
+
             byte action = InputUtil.readByte("Attack 1:,Defend 2:");
             switch (action) {
                 case 1:
-                    if (enemy.defending(enemyAction, player.getDamage())) {
-                        if (enemy.getLife() < 0) {
-                            System.out.printf("Enemy defended, damage caused:%d\n", enemy.getLife());
-                            System.out.printf("Opponent life:%d life\n", 0);
-                        } else {
-                            System.out.printf("Opponent was left with:%d life\n", enemy.getLife());
-                        }
-                        System.out.printf("Current life:%d\n", player.getLife());
+                    if (enemy.getDefend()) {
+                        enemy.takeDamage(player.getDamage());
+                        System.out.printf("Enemy defended, damage caused:%d\n", player.getDamage() / 2);
+                        System.out.printf("Opponent life:%d\n", enemy.getLife());
                     } else {
+                        player.vulnerable();
                         enemy.takeDamage(player.getDamage());
                         System.out.printf("Damage caused:%d\n", player.getDamage());
-
-                        if (enemy.getLife() < 0) {
-                            System.out.println("Opponent's current life:" + 0);
-                        } else {
-                            System.out.printf("Current life of the opponent:%d\n", enemy.getLife());
-                        }
+                        System.out.printf("Current life of the opponent:%d\n", enemy.getLife());
+                        System.out.println("-----------------------------");
                     }
                     break;
                 case 2:
-                    player.defending(action, enemy.getDamage());
+                    player.setDefend(true);
                     System.out.println("You defended");
                     break;
                 default:
@@ -52,22 +48,14 @@ public class BattleService {
                     break;
             }
             if (enemyAction == 0) {
-                if (player.defending(enemyAction, enemy.getDamage())) {
-                    if (player.getLife() <= 0) {
-                        System.out.printf("You defended:%d life\n.", 0);
-                    } else {
-                        System.out.printf("You defended:%d\n", player.getLife());
-                        System.out.printf("enemy attacked:%d\n", enemy.getDamage());
-                    }
+                if (player.getDefend()) {
+                    player.takeDamage(enemy.getDamage());
+                    System.out.printf("enemy attacked:%d\n", enemy.getDamage() / 2);
+                    System.out.printf("Current life:%d\n", player.getLife());
                 } else {
                     player.takeDamage(enemy.getDamage());
                     System.out.printf("Damage taken:%d\n", enemy.getDamage());
-
-                    if (player.getLife() <= 0) {
-                        System.out.printf("Current life:%d life\n", 0);
-                    } else {
-                        System.out.printf("Current life:%d", player.getLife());
-                    }
+                    System.out.printf("Current life:%d\n", player.getLife());
                 }
             }
             roundCounter++;

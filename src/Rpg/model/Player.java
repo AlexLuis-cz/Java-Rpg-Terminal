@@ -1,6 +1,11 @@
 package Rpg.model;
 
+import Rpg.Object.Weapon;
+
 public class Player extends Character {
+    private Weapon weapon;
+    private double money;
+    private boolean defend;
 
     public Player(String name, int life, int damage) {
         this.name = name;
@@ -8,17 +13,33 @@ public class Player extends Character {
         this.damage = damage;
     }
 
-    public boolean defending(int action, int damageTaken) {
-        if (action == 0) {
+    public void takeDamage(int damageTaken) {
+        if (defend) {
             this.life -= damageTaken / 2;
-            return true;
         } else {
-            return false;
+            this.life -= damageTaken;
         }
     }
 
-    public void takeDamage(int damageTaken) {
-        this.life -= damageTaken;
+    public void vulnerable() {
+        this.defend = false;
+    }
+
+    //getters e setters
+    public boolean getDefend() {
+        return this.defend;
+    }
+
+    public double getMoney() {
+        return this.money;
+    }
+
+    public void setMoney(double money) {
+        this.money += money;
+    }
+
+    public void setDefend(boolean defending) {
+        this.defend = defending;
     }
 
     @Override

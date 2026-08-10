@@ -1,6 +1,8 @@
 package Rpg.model;
 
 public class Enemy extends Character {
+    private boolean defend;
+
 
     public Enemy(NameEnemys nameEnemys, int life, int damage) {
         super.nameEnemys = nameEnemys;
@@ -8,17 +10,26 @@ public class Enemy extends Character {
         this.damage = damage;
     }
 
-    public boolean defending(int action, int damageTaken) {
-        if (action == 1) {
-            this.life -= damageTaken / 2;
-            return true;
-        } else {
-            return false;
-        }
+
+    public void vulnerable() {
+        this.defend = false;
     }
 
     public void takeDamage(int damageTaken) {
-        this.life -= damageTaken;
+        if (defend) {
+            this.life -= damageTaken / 2;
+        } else {
+            this.life -= damageTaken;
+        }
+    }
+
+    //getters e setters
+    public boolean getDefend() {
+        return this.defend;
+    }
+
+    public void setDefend(boolean defend) {
+        this.defend = defend;
     }
 
     @Override
@@ -26,6 +37,7 @@ public class Enemy extends Character {
         return "------------------" +
                 "\nName:" + this.nameEnemys.getName() +
                 "\nLife:" + this.life +
-                "\nDamage:" + this.damage;
+                "\nDamage:" + this.damage +
+                "\nPowerLevel:" + this.nameEnemys.getPowerLevel();
     }
 }

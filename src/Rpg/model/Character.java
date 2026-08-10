@@ -14,5 +14,4 @@ public class Character {
     public int getDamage() {
         return this.damage;
     }
-
 }
