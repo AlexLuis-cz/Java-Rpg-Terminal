@@ -2,14 +2,13 @@ package Rpg.model;
 
 public class Enemy extends Character {
     private boolean defend;
-
+    private final NameEnemys NAME_ENEMYS;
 
     public Enemy(NameEnemys nameEnemys, int life, int damage) {
-        super.nameEnemys = nameEnemys;
+        this.NAME_ENEMYS = nameEnemys;
         this.life = life;
         this.damage = damage;
     }
-
 
     public void vulnerable() {
         this.defend = false;
@@ -32,12 +31,17 @@ public class Enemy extends Character {
         this.defend = defend;
     }
 
+    public int getPowerUp() {
+        this.setDamage(this.damage * NAME_ENEMYS.getPowerLevel());
+        return this.damage;
+    }
+
     @Override
     public String toString() {
         return "------------------" +
-                "\nName:" + this.nameEnemys.getName() +
+                "\nName:" + this.NAME_ENEMYS.getName() +
                 "\nLife:" + this.life +
                 "\nDamage:" + this.damage +
-                "\nPowerLevel:" + this.nameEnemys.getPowerLevel();
+                "\nPowerLevel:" + this.NAME_ENEMYS.getPowerLevel();
     }
 }

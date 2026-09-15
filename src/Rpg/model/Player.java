@@ -3,6 +3,7 @@ package Rpg.model;
 import Rpg.Object.Weapon;
 
 public class Player extends Character {
+    private String name;
     private Weapon weapon;
     private double money;
     private boolean defend;

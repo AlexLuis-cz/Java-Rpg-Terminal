@@ -12,6 +12,7 @@ public class EnemyService {
         switch (utilRandom.randomNumber()) {
             case 0:
                 enemySelect = new Enemy(NameEnemys.ARTEMIS, utilRandom.selectLife(), utilRandom.selectDamage());
+                enemySelect.getPowerUp();
                 System.out.println(enemySelect);
                 break;
             case 1:

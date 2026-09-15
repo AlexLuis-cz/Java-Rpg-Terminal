@@ -3,7 +3,8 @@ package Rpg.model;
 public enum NameEnemys {
     ARTEMIS("Artemis", 1),
     ALEXIOS("Alexios", 2),
-    EIVOR("Eivor", 3);
+    EIVOR("Eivor", 3){
+    };
 
     private final String name;
     private final int powerLevel;
